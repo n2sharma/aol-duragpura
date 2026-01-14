@@ -7,8 +7,6 @@ import { Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/variants";
 
-import CustomButton from "./CustomButton";
-
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -16,37 +14,37 @@ const testimonialData = [
   {
     img: "/assets/img/testimonial/lucy.jpg",
     message:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aliquid nisi vero pariatur quisquam",
+      "The Happiness Program helped me feel calmer, more positive, and emotionally balanced. I now handle stress much better in my daily life.",
     name: "Lucy Anthony",
   },
   {
     img: "/assets/img/testimonial/maria.jpg",
     message:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aliquid nisi vero pariatur quisquam",
+      "After attending the program, I feel more focused and peaceful. The breathing techniques are simple yet powerful.",
     name: "Maria Anthony",
   },
   {
     img: "/assets/img/testimonial/michael.jpg",
     message:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aliquid nisi vero pariatur quisquam",
+      "This program changed the way I look at life. I feel more relaxed, confident, and mentally strong.",
     name: "Michael Anthony",
   },
   {
     img: "/assets/img/testimonial/lucy.jpg",
     message:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aliquid nisi vero pariatur quisquam",
+      "The teachers were very supportive and kind. I truly enjoyed the peaceful atmosphere at the Durgapura Center.",
     name: "Lucy Anthony",
   },
   {
     img: "/assets/img/testimonial/maria.jpg",
     message:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aliquid nisi vero pariatur quisquam",
+      "A wonderful experience! The meditation sessions helped me sleep better and stay calm throughout the day.",
     name: "Maria Anthony",
   },
   {
     img: "/assets/img/testimonial/michael.jpg",
     message:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aliquid nisi vero pariatur quisquam",
+      "I feel lighter, happier, and more balanced after completing the Happiness Program.",
     name: "Michael Anthony",
   },
 ];
@@ -60,10 +58,16 @@ const Testimonial = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: true, amount: 0.2 }}
-          className="h2 text-center"
+          className="h2 text-center mb-4"
         >
-          Our testimonials
+          What Our Participants Say
         </motion.h2>
+
+        <p className="text-center max-w-[600px] mx-auto text-text/70 mb-10">
+          Hear from people who have experienced the Art of Living Happiness
+          Program at our Durgapura Center.
+        </p>
+
         <motion.div
           variants={fadeIn("up", 0.6)}
           initial="hidden"
@@ -74,36 +78,31 @@ const Testimonial = () => {
             slidesPerView={1}
             spaceBetween={30}
             modules={[Pagination]}
-            pagination={{
-              clickable: true,
-            }}
+            pagination={{ clickable: true }}
             breakpoints={{
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
-            className="h-[320px]"
+            className="h-[340px]"
           >
             {testimonialData.map((person, index) => {
               return (
                 <SwiperSlide className="h-full" key={index}>
-                  <div className="flex flex-col justify-center items-center gap-6 text-center h-full">
+                  <div className="flex flex-col justify-center items-center gap-6 text-center h-full bg-white rounded-xl shadow-sm p-6">
                     <Image
                       src={person.img}
                       width={90}
                       height={90}
-                      alt=""
+                      alt={person.name}
                       className="rounded-full border-2 border-accent"
                     />
+
                     <div className="flex flex-col justify-center items-center">
-                      <FaQuoteLeft className="text-2xl text-gray-300" />
-                      <p className="max-w-[380px] mb-4">{person.message}</p>
-                      <span className="text-2xl text-accent">
+                      <FaQuoteLeft className="text-2xl text-accent/30 mb-2" />
+                      <p className="max-w-[380px] mb-4 text-text/80">
+                        {person.message}
+                      </p>
+                      <span className="text-lg font-semibold text-accent">
                         {person.name}
                       </span>
                     </div>

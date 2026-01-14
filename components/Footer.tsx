@@ -7,23 +7,19 @@ import {
   FaEnvelope,
   FaPhoneAlt,
   FaFacebook,
-  FaTwitter,
   FaYoutube,
   FaInstagram,
 } from "react-icons/fa";
 
-import CustomButton from "./CustomButton";
 import { motion } from "framer-motion";
 
 // variants
 const footerContainerVariant = {
-  hidden: {
-    opacity: 0,
-  },
+  hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.6,
+      staggerChildren: 0.4,
       duration: 0.5,
       ease: "linear",
     },
@@ -31,10 +27,7 @@ const footerContainerVariant = {
 };
 
 const footerItem = {
-  hidden: {
-    y: 20,
-    opacity: 0,
-  },
+  hidden: { y: 20, opacity: 0 },
   show: {
     opacity: 1,
     transition: {
@@ -46,215 +39,106 @@ const footerItem = {
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-300 pt-24">
-      <div className="container mx-auto pb-24">
+    <footer id="footer" className="bg-[#0f0f0f] pt-20 text-white">
+      <div className="container mx-auto pb-16">
         <motion.div
           variants={footerContainerVariant}
           initial="hidden"
-          whileInView={"show"}
+          whileInView="show"
           viewport={{ once: false, amount: 0.3 }}
-          className="text-white grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-12"
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10"
         >
-          {/* info */}
+          {/* Info */}
           <motion.div variants={footerItem} className="flex flex-col gap-4">
             <Link href="#">
               <Image
-                src={"/assets/img/logo.png"}
-                width={117}
-                height={55}
-                alt=""
+                src="/assets/img/aollogo.svg"
+                width={140}
+                height={60}
+                alt="Art of Living"
               />
             </Link>
-            <p className="max-w-sm">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Blanditiis autem sequi maxime.
+
+            <p className="text-white/70 max-w-sm">
+              The Art of Living Foundation promotes peace, well-being, and
+              stress-free living through Yoga, Meditation, and breathing
+              techniques.
             </p>
-            <ul className="flex flex-col gap-4 ">
-              <li className="flex items-center gap-4">
-                <FaMapMarkerAlt className="text-xl text-accent" />
-                <span>Maharani farms, Durgapura, Jaipur</span>
+
+            <ul className="flex flex-col gap-3 text-white/70">
+              <li className="flex items-center gap-3">
+                <FaMapMarkerAlt className="text-accent" />
+                <span>Maharani Farms, Durgapura, Jaipur</span>
               </li>
-              <li className="flex items-center gap-4">
-                <FaPhoneAlt className="text-xl text-accent" />
-                <span>+91 77681666190</span>
+              <li className="flex items-center gap-3">
+                <FaPhoneAlt className="text-accent" />
+                <span>+91 7768166190</span>
               </li>
-              <li>
-                <Link className="flex items-center gap-4" href="#">
-                  <FaEnvelope className="text-xl text-accent" />
-                  <span>duragpuraAol@gmail.com</span>
-                </Link>
+              <li className="flex items-center gap-3">
+                <FaEnvelope className="text-accent" />
+                <span>durgapuraaol@gmail.com</span>
               </li>
             </ul>
           </motion.div>
-          {/* Blog */}
-          <motion.div variants={footerItem}>
-            <h4 className="h4 text-accent mb-4">Recent blog posts</h4>
 
-            {/* Post */}
-            <div className="border-b border-dotted border-gray-400 flex flex-col gap-3 pb-3 mb-4">
-              <Link className="hover:text-accent transition-all" href="#">
-                <h5 className="h5 leading-snug ">
-                  How to stay motivated for all excercise?
-                </h5>
-                <p className="text-gray-400 text-[12px] tracking-[3px] uppercase">
-                  Sepetember 22, 2025
-                </p>
-              </Link>
-            </div>
+          {/* Gallery - Now takes 2 columns */}
+          <motion.div variants={footerItem} className="lg:col-span-2">
+            <h4 className="h4 text-accent mb-4">Moments of Peace</h4>
 
-            {/* Post */}
-            <div className="border-b border-dotted border-gray-400 flex flex-col gap-3 pb-3 mb-4">
-              <Link className="hover:text-accent transition-all" href="#">
-                <h5 className="h5 leading-snug ">
-                  How to stay motivated for all excercise?
-                </h5>
-                <p className="text-gray-400 text-[12px] tracking-[3px] uppercase">
-                  Sepetember 22, 2025
-                </p>
-              </Link>
-            </div>
-
-            {/* Post */}
-            <div className="flex flex-col gap-3 pb-3 mb-4">
-              <Link className="hover:text-accent transition-all" href="#">
-                <h5 className="h5 leading-snug ">
-                  How to stay motivated for all excercise?
-                </h5>
-                <p className="text-gray-400 text-[12px] tracking-[3px] uppercase">
-                  Sepetember 22, 2025
-                </p>
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Gallery */}
-          <motion.div variants={footerItem}>
-            <h4 className="h4 text-accent mb-4">Gallery</h4>
-            {/* Gallery images */}
             <div className="flex flex-wrap gap-2">
-              <Link href="#">
+              {[
+                "image1.jpeg",
+                "image2.jpeg",
+                "image3.jpeg",
+                "image4.jpeg",
+                "image5.jpeg",
+                "image6.jpeg",
+                "image1.jpeg",
+                "image2.jpeg",
+                "image3.jpeg",
+                "image4.jpeg",
+                "image5.jpeg",
+                "image1.jpeg",
+                "image2.jpeg",
+                "image3.jpeg",
+                "image4.jpeg",
+                "image5.jpeg",
+              ].map((img, i) => (
                 <Image
-                  src={"/assets/img/trainers/david.jpg"}
-                  width={100}
-                  height={100}
-                  alt=""
+                  key={i}
+                  src={`/assets/img/gallery/${img}`}
+                  width={90}
+                  height={90}
+                  alt="Gallery"
+                  className="rounded-md object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />
-              </Link>
-              <Link href="#">
-                <Image
-                  src={"/assets/img/trainers/matt.jpg"}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-              </Link>
-              <Link href="#">
-                <Image
-                  src={"/assets/img/trainers/rosy.jpg"}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-              </Link>
-              <Link href="#">
-                <Image
-                  src={"/assets/img/trainers/sofia.jpg"}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-              </Link>
-              <Link href="#">
-                <Image
-                  src={"/assets/img/trainers/david.jpg"}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-              </Link>
-              <Link href="#">
-                <Image
-                  src={"/assets/img/trainers/rosy.jpg"}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-              </Link>
-              <Link href="#">
-                <Image
-                  src={"/assets/img/trainers/matt.jpg"}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-              </Link>
+              ))}
             </div>
           </motion.div>
 
-          {/* News Letter */}
+          {/* Social */}
           <motion.div variants={footerItem}>
-            <h4 className="h4 text-accent mb-4">Newsletter</h4>
-            <div className="flex flex-col gap-4">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Veniam, impedit nisi accusamus optio
-              </p>
-              <form action="" className="flex items-center">
-                <input
-                  type="text"
-                  placeholder="your email address"
-                  className="h-[50px] outline-none px-4 text-primary-300"
-                />
-
-                <CustomButton containerStyles="h-[50px] px-8" text="Send" />
-              </form>
+            <h4 className="h4 text-accent mb-4">Follow Us</h4>
+            <div className="flex gap-4 text-2xl text-white/70">
+              <Link href="#" className="hover:text-accent transition-all">
+                <FaFacebook />
+              </Link>
+              <Link href="#" className="hover:text-accent transition-all">
+                <FaYoutube />
+              </Link>
+              <Link href="#" className="hover:text-accent transition-all">
+                <FaInstagram />
+              </Link>
             </div>
           </motion.div>
         </motion.div>
       </div>
-      {/* copyright */}
-      <div className="text-white border-t border-white/20 py-12">
-        <div className="container mx-auto h-full">
-          <div className="flex items-center justify-between h-full">
-            <span>&copy; Copyright AOL Durgapura 2026</span>
-            <ul className="flex gap-4 text-xl">
-              <li>
-                <Link
-                  href="#"
-                  className="text-white hover:text-accent transition-all"
-                >
-                  <FaFacebook />
-                </Link>
-              </li>
 
-              <li>
-                <Link
-                  href="#"
-                  className="text-white hover:text-accent transition-all"
-                >
-                  <FaTwitter />
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="#"
-                  className="text-white hover:text-accent transition-all"
-                >
-                  <FaYoutube />
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="#"
-                  className="text-white hover:text-accent transition-all"
-                >
-                  <FaInstagram />
-                </Link>
-              </li>
-            </ul>
-          </div>
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10 py-6">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-white/60 text-sm">
+          <span>© 2026 Art of Living – Durgapura Center, Jaipur</span>
+          <span>Designed with peace & purpose 🧘‍♂️</span>
         </div>
       </div>
     </footer>

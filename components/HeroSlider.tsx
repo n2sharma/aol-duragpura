@@ -18,28 +18,38 @@ const HeroSlider = () => {
   return (
     <Swiper className="h-full">
       <SwiperSlide>
-        <div className="h-full flex justify-end pt-48">
+        <div
+          className="h-full bg-cover bg-center flex justify-end pt-48 "
+          style={{ backgroundImage: "url(/assets/img/center.jpeg)" }}
+        >
           <div className="flex flex-col items-center lg:items-start lg:max-w-[700px]">
             <motion.h1
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.2 }}
-              className="h1 text-center lg:text-left mb-2"
+              className="h1 text-center lg:text-left mb-2 text-white"
             >
-              <span className="text-accent">Where hard</span> work meets success
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                Art
+              </span>{" "}
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                of
+              </span>{" "}
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                Living
+              </span>
             </motion.h1>
             <motion.p
               variants={fadeIn("up", 0.6)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.2 }}
-              className="text-white italic text-center lg:text-left mb-4"
+              className="text-white italic text-center lg:text-left mb-4 hover:text-accent transition-colors duration-300 cursor-pointer"
             >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-              nostrum repellat repudiandae quisquam, natus maxime voluptates
-              placeat ullam asperiores officiis numquam beatae in itaque aliquam
-              perspiciatis repellendus tempore unde animi.
+              Join Art of Living programs at Durgapura Center, Jaipur.
+              Experience Yoga, Meditation, and Stress Relief guided by certified
+              instructors.
             </motion.p>
             <motion.div
               variants={fadeIn("up", 0.8)}
@@ -48,8 +58,121 @@ const HeroSlider = () => {
               viewport={{ once: false, amount: 0.2 }}
             >
               <CustomButton
-                text="Get started"
+                text="Join a Program"
                 containerStyles="w-[196px] h-[62px]"
+                onClick={() => {
+                  document
+                    .getElementById("register")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              />
+            </motion.div>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div
+          className="h-full bg-cover bg-center flex justify-end pt-48"
+          style={{ backgroundImage: "url(/assets/img/yoga.jpg)" }}
+        >
+          <div className="flex flex-col items-center lg:items-start lg:max-w-[700px]">
+            <motion.h1
+              variants={fadeIn("up", 0.4)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.2 }}
+              className="h1 text-center lg:text-left mb-2 text-white"
+            >
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                Art
+              </span>{" "}
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                of
+              </span>{" "}
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                Living
+              </span>
+            </motion.h1>
+            <motion.p
+              variants={fadeIn("up", 0.6)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.2 }}
+              className="text-white italic text-center lg:text-left mb-4 hover:text-accent transition-colors duration-300 cursor-pointer"
+            >
+              Join Art of Living programs at Durgapura Center, Jaipur.
+              Experience Yoga, Meditation, and Stress Relief guided by certified
+              instructors.
+            </motion.p>
+            <motion.div
+              variants={fadeIn("up", 0.8)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.2 }}
+            >
+              <CustomButton
+                text="Join a Program"
+                containerStyles="w-[196px] h-[62px]"
+                onClick={() => {
+                  document
+                    .getElementById("register")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              />
+            </motion.div>
+          </div>
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div
+          className="h-full bg-cover bg-center flex justify-end pt-48"
+          style={{ backgroundImage: "url(/assets/img/meditation.jpg)" }}
+        >
+          <div className="flex flex-col items-center lg:items-start lg:max-w-[700px]">
+            <motion.h1
+              variants={fadeIn("up", 0.4)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.2 }}
+              className="h1 text-center lg:text-left mb-2 text-white"
+            >
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                Art
+              </span>{" "}
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                of
+              </span>{" "}
+              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
+                Living
+              </span>
+            </motion.h1>
+            <motion.p
+              variants={fadeIn("up", 0.6)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.2 }}
+              className="text-white italic text-center lg:text-left mb-4 hover:text-accent transition-colors duration-300 cursor-pointer"
+            >
+              Join Art of Living programs at Durgapura Center, Jaipur.
+              Experience Yoga, Meditation, and Stress Relief guided by certified
+              instructors.
+            </motion.p>
+            <motion.div
+              variants={fadeIn("up", 0.8)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.2 }}
+            >
+              <CustomButton
+                text="Join a Program"
+                containerStyles="w-[196px] h-[62px]"
+                onClick={() => {
+                  document
+                    .getElementById("register")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
               />
             </motion.div>
           </div>
@@ -58,9 +181,9 @@ const HeroSlider = () => {
 
       {/* Swiper nav buttons */}
       <SwiperNavButtons
-        containerStyles="absolute bottom-2 lg:bottom-0 right-0 h-[130px] w-full lg:w-[700px] z-50 flex justify-center lg:justify-start gap-1"
-        btnStyles="border border-accent text-white w-[56px] h-[56px] flex justify-center items-center hover:bg-accent transition-all duration-300"
-        iconsstyles="text-2xl"
+        containerStyles="absolute bottom-4 right-4 z-50 flex gap-2"
+        btnStyles="border border-white/40 text-white w-[42px] h-[42px] rounded-full flex justify-center items-center hover:bg-accent hover:border-accent transition-all duration-300"
+        iconsstyles="text-lg"
       />
     </Swiper>
   );

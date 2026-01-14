@@ -1,8 +1,6 @@
 "use client";
 
-import { FaUsers } from "react-icons/fa";
-import { IoIosPricetags } from "react-icons/io";
-import { FaDumbbell } from "react-icons/fa6";
+import { FaHandsHelping, FaLeaf, FaOm } from "react-icons/fa";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/variants";
@@ -10,19 +8,22 @@ import Achivements from "./Achivements";
 
 const featured = [
   {
-    icon: <FaUsers />,
-    title: "award-winning trainers",
-    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, atque maxime eum repellat rem nostrum ut ullam quam voluptate at corporis, consectetur, unde deserunt architecto quis inventore labore dolorem fugiat!`,
+    icon: <FaOm />,
+    title: "Authentic Practices",
+    subtitle:
+      "Experience traditional Yoga, Meditation, and Sudarshan Kriya techniques rooted in ancient Indian wisdom for holistic well-being.",
   },
   {
-    icon: <IoIosPricetags />,
-    title: "excellent prices",
-    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, atque maxime eum repellat rem nostrum ut ullam quam voluptate at corporis, consectetur, unde deserunt architecto quis inventore labore dolorem fugiat!`,
+    icon: <FaLeaf />,
+    title: "Mind & Body Balance",
+    subtitle:
+      "Our programs help reduce stress, improve mental clarity, and bring harmony to your daily life through mindful practices.",
   },
   {
-    icon: <FaDumbbell />,
-    title: "modern equipments",
-    subtitle: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, atque maxime eum repellat rem nostrum ut ullam quam voluptate at corporis, consectetur, unde deserunt architecto quis inventore labore dolorem fugiat!`,
+    icon: <FaHandsHelping />,
+    title: "Community Support",
+    subtitle:
+      "Join a supportive community focused on personal growth, inner peace, and positive living at our Durgapura Center.",
   },
 ];
 
@@ -45,12 +46,13 @@ const About = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.2 }}
-            className="max-w-[600px] mx-auto text-center"
+            className="max-w-[700px] mx-auto text-center text-text/80"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ex,
-            amet corporis beatae sapiente, tempore excepturi non ullam
-            asperiores reprehenderit, adipisci repellat enim aspernatur aliquam
-            est sit nostrum dicta sunt!
+            The Art of Living Foundation is a global non-profit organization
+            dedicated to promoting peace, well-being, and stress-free living. At
+            our Durgapura Center in Jaipur, we offer Yoga, Meditation, and
+            Happiness Programs designed to help you find inner balance, improve
+            mental clarity, and live a healthier, more joyful life.
           </motion.p>
         </div>
 
@@ -65,10 +67,11 @@ const About = () => {
           {featured.map((feature, index) => {
             return (
               <div
-                className="flex flex-col justify-center items-center gap-4 border p-10"
+                // className="flex flex-col justify-center items-center gap-4 border p-10"
+                className="flex flex-col justify-center items-center gap-4 bg-white shadow-sm rounded-xl p-10 hover:shadow-md transition-all"
                 key={index}
               >
-                <div className="text-4xl bg-primary-300 text-white w-[80px] h-[80px] rounded-full flex justify-center items-center">
+                <div className="text-4xl bg-accent/10 text-accent w-[80px] h-[80px] rounded-full flex justify-center items-center">
                   {feature.icon}
                 </div>
                 <div className="flex flex-col justify-center items-center gap-2 text-center">

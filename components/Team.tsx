@@ -8,13 +8,13 @@ import CustomButton from "./CustomButton";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/variants";
 
-const trainerData = [
+const teacherData = [
   {
     image: "/assets/img/trainers/david.jpg",
     name: "David Williams",
-    role: "Body builder coach",
+    role: "Happiness Program Teacher",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, atque? Maiores autem dolorem, cumque ipsa deleniti",
+      "Certified Art of Living teacher with experience in guiding meditation, breathing techniques, and stress management programs.",
     social: [
       { icon: FaFacebook, href: "http://facebook.com" },
       { icon: FaTwitter, href: "http://twitter.com" },
@@ -24,9 +24,9 @@ const trainerData = [
   {
     image: "/assets/img/trainers/rosy.jpg",
     name: "Rosy Rivera",
-    role: "Body builder coach",
+    role: "Yoga & Meditation Teacher",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, atque? Maiores autem dolorem, cumque ipsa deleniti",
+      "Specializes in Yoga, mindfulness, and wellness practices to help people achieve inner balance and peace.",
     social: [
       { icon: FaFacebook, href: "http://facebook.com" },
       { icon: FaTwitter, href: "http://twitter.com" },
@@ -36,9 +36,9 @@ const trainerData = [
   {
     image: "/assets/img/trainers/matt.jpg",
     name: "Matt Stone",
-    role: "Body builder coach",
+    role: "Breathing Techniques Instructor",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, atque? Maiores autem dolorem, cumque ipsa deleniti",
+      "Guides participants through Sudarshan Kriya and stress-relief techniques for emotional well-being.",
     social: [
       { icon: FaFacebook, href: "http://facebook.com" },
       { icon: FaTwitter, href: "http://twitter.com" },
@@ -48,9 +48,9 @@ const trainerData = [
   {
     image: "/assets/img/trainers/sofia.jpg",
     name: "Sofia Andrews",
-    role: "Body builder coach",
+    role: "Wellness Program Facilitator",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, atque? Maiores autem dolorem, cumque ipsa deleniti",
+      "Passionate about helping people improve mental clarity, focus, and overall wellness through meditation.",
     social: [
       { icon: FaFacebook, href: "http://facebook.com" },
       { icon: FaTwitter, href: "http://twitter.com" },
@@ -61,7 +61,7 @@ const trainerData = [
 
 const Team = () => {
   return (
-    <section className="py-12 xl:h-[110vh]" id="team">
+    <section className="py-12" id="team">
       <div className="container mx-auto h-full flex flex-col items-center justify-center">
         <motion.h2
           variants={fadeIn("up", 0.4)}
@@ -70,9 +70,15 @@ const Team = () => {
           viewport={{ once: false, amount: 0.2 }}
           className="h2 text-center mb-6"
         >
-          Our trainers
+          Our Teachers
         </motion.h2>
-        {/* Grid trainers */}
+
+        <p className="text-center max-w-[600px] text-text/70 mb-10">
+          Meet our certified Art of Living teachers who guide participants
+          through the Happiness Program, Yoga, and Meditation sessions.
+        </p>
+
+        {/* Grid teachers */}
         <motion.div
           variants={fadeIn("up", 0.6)}
           initial="hidden"
@@ -80,52 +86,42 @@ const Team = () => {
           viewport={{ once: false, amount: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mb-12"
         >
-          {trainerData.map((trainer, index) => {
+          {teacherData.map((teacher, index) => {
             return (
               <div
                 className="flex flex-col items-center text-center"
                 key={index}
               >
-                <div className="relative w-[320px] h-[360px] mx-auto mb-4">
-                  <Image src={trainer.image} fill alt="" />
+                <div className="relative w-[320px] h-[360px] mx-auto mb-4 rounded-lg overflow-hidden shadow-sm">
+                  <Image src={teacher.image} fill alt={teacher.name} />
                 </div>
-                {/* name */}
-                <h4 className="h4 mb-2">{trainer.name}</h4>
-                <p className="uppercase text-xs tracking-[3px] mb-2">
-                  {trainer.role}
+
+                <h4 className="h4 mb-2">{teacher.name}</h4>
+
+                <p className="uppercase text-xs tracking-[3px] mb-2 text-accent">
+                  {teacher.role}
                 </p>
-                <p className="mb-6 max-w-[320px] mx-auto">
-                  {trainer.description}
+
+                <p className="mb-6 max-w-[320px] mx-auto text-text/70">
+                  {teacher.description}
                 </p>
-                <div className="flex gap-12 justify-center">
-                  {trainer.social.map((item, index) => {
+
+                <div className="flex gap-8 justify-center text-text/70">
+                  {teacher.social.map((item, index) => {
                     return (
-                      <div key={index}>
-                        <Link
-                          href={item.href}
-                          className="hover:text-accent transition-all"
-                        >
-                          <item.icon className="text-lg" />
-                        </Link>
-                      </div>
+                      <Link
+                        key={index}
+                        href={item.href}
+                        className="hover:text-accent transition-all"
+                      >
+                        <item.icon className="text-lg" />
+                      </Link>
                     );
                   })}
                 </div>
               </div>
             );
           })}
-        </motion.div>
-        {/* btn */}
-        <motion.div
-          variants={fadeIn("up", 0.6)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.2 }}
-        >
-          <CustomButton
-            containerStyles="w-[196px] h-[62px]"
-            text="see all trainers"
-          />
         </motion.div>
       </div>
     </section>

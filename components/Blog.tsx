@@ -130,17 +130,6 @@ const Blog = () => {
             />
           </Swiper>
         </motion.div>
-        <motion.div
-          variants={fadeIn("up", 0.8)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.2 }}
-        >
-          <CustomButton
-            containerStyles="block w-[196px] h-[62px] mx-auto"
-            text="View all"
-          />
-        </motion.div>
       </div>
     </section>
   );
