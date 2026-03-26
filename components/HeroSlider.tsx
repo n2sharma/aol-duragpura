@@ -1,183 +1,75 @@
 "use client";
 
-// import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/variants";
 
-// componnents
 import CustomButton from "./CustomButton";
 import SwiperNavButtons from "./SwiperNavButtons";
+
+const slides = [
+  "/assets/img/center.jpeg",
+  "/assets/img/yoga.jpg",
+  "/assets/img/meditation.jpg",
+];
 
 const HeroSlider = () => {
   return (
     <Swiper className="h-full">
-      <SwiperSlide>
-        <div
-          className="h-full bg-cover bg-center flex justify-end pt-48 "
-          style={{ backgroundImage: "url(/assets/img/center.jpeg)" }}
-        >
-          <div className="flex flex-col items-center lg:items-start lg:max-w-[700px]">
-            <motion.h1
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-              className="h1 text-center lg:text-left mb-2 text-white"
-            >
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                Art
-              </span>{" "}
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                of
-              </span>{" "}
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                Living
-              </span>
-            </motion.h1>
-            <motion.p
-              variants={fadeIn("up", 0.6)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-              className="text-white italic text-center lg:text-left mb-4 hover:text-accent transition-colors duration-300 cursor-pointer"
-            >
-              Join Art of Living programs at Durgapura Center, Jaipur.
-              Experience Yoga, Meditation, and Stress Relief guided by certified
-              instructors.
-            </motion.p>
-            <motion.div
-              variants={fadeIn("up", 0.8)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-            >
-              <CustomButton
-                text="Join a Program"
-                containerStyles="w-[196px] h-[62px]"
-                onClick={() => {
-                  document
-                    .getElementById("register")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              />
-            </motion.div>
-          </div>
-        </div>
-      </SwiperSlide>
+      {slides.map((bg, i) => (
+        <SwiperSlide key={i}>
+          <div
+            className="h-full bg-cover bg-center relative flex justify-end pt-48"
+            style={{ backgroundImage: `url(${bg})` }}
+          >
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-black/50"></div>
 
-      <SwiperSlide>
-        <div
-          className="h-full bg-cover bg-center flex justify-end pt-48"
-          style={{ backgroundImage: "url(/assets/img/yoga.jpg)" }}
-        >
-          <div className="flex flex-col items-center lg:items-start lg:max-w-[700px]">
-            <motion.h1
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-              className="h1 text-center lg:text-left mb-2 text-white"
-            >
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                Art
-              </span>{" "}
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                of
-              </span>{" "}
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                Living
-              </span>
-            </motion.h1>
-            <motion.p
-              variants={fadeIn("up", 0.6)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-              className="text-white italic text-center lg:text-left mb-4 hover:text-accent transition-colors duration-300 cursor-pointer"
-            >
-              Join Art of Living programs at Durgapura Center, Jaipur.
-              Experience Yoga, Meditation, and Stress Relief guided by certified
-              instructors.
-            </motion.p>
-            <motion.div
-              variants={fadeIn("up", 0.8)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-            >
-              <CustomButton
-                text="Join a Program"
-                containerStyles="w-[196px] h-[62px]"
-                onClick={() => {
-                  document
-                    .getElementById("register")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              />
-            </motion.div>
-          </div>
-        </div>
-      </SwiperSlide>
+            <div className="relative z-10 flex flex-col items-center lg:items-start lg:max-w-[700px] px-6">
+              <motion.h1
+                variants={fadeIn("up", 0.4)}
+                initial="hidden"
+                whileInView="show"
+                className="text-4xl lg:text-6xl font-bold text-white text-center lg:text-left mb-4 drop-shadow-lg"
+              >
+                Find Inner Peace & Joy
+                <span className="block text-accent">
+                  at Art of Living – Durgapura
+                </span>
+              </motion.h1>
 
-      <SwiperSlide>
-        <div
-          className="h-full bg-cover bg-center flex justify-end pt-48"
-          style={{ backgroundImage: "url(/assets/img/meditation.jpg)" }}
-        >
-          <div className="flex flex-col items-center lg:items-start lg:max-w-[700px]">
-            <motion.h1
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-              className="h1 text-center lg:text-left mb-2 text-white"
-            >
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                Art
-              </span>{" "}
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                of
-              </span>{" "}
-              <span className="hover:text-accent transition-colors duration-300 cursor-pointer">
-                Living
-              </span>
-            </motion.h1>
-            <motion.p
-              variants={fadeIn("up", 0.6)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-              className="text-white italic text-center lg:text-left mb-4 hover:text-accent transition-colors duration-300 cursor-pointer"
-            >
-              Join Art of Living programs at Durgapura Center, Jaipur.
-              Experience Yoga, Meditation, and Stress Relief guided by certified
-              instructors.
-            </motion.p>
-            <motion.div
-              variants={fadeIn("up", 0.8)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.2 }}
-            >
-              <CustomButton
-                text="Join a Program"
-                containerStyles="w-[196px] h-[62px]"
-                onClick={() => {
-                  document
-                    .getElementById("register")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              />
-            </motion.div>
+              <motion.p
+                variants={fadeIn("up", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                className="text-white/90 text-lg italic text-center lg:text-left mb-6 max-w-xl drop-shadow-md"
+              >
+                Discover yoga, meditation, and powerful breathing techniques to
+                reduce stress, improve clarity, and live with joy.
+              </motion.p>
+
+              {/* <motion.div
+                variants={fadeIn("up", 0.8)}
+                initial="hidden"
+                whileInView="show"
+              >
+                <CustomButton
+                  text="Register here"
+                  containerStyles="w-[260px] h-[62px]"
+                  onClick={() => {
+                    document
+                      .getElementById("register")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                />
+              </motion.div> */}
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
+        </SwiperSlide>
+      ))}
 
       {/* Swiper nav buttons */}
       <SwiperNavButtons

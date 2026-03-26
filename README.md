@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Art of Living – Durgapura Website
 
-## Getting Started
+This is a [Next.js](https://nextjs.org/) project for the Art of Living – Durgapura center. It features information about yoga, meditation, upcoming programs, and more.
 
-First, run the development server:
+## 🚀 Getting Started
+
+To run the project locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `app/` – Main Next.js app pages and layout
+- `components/` – Reusable React components (HeroSlider, CustomButton, etc.)
+- `public/` – Static assets (images, logos, etc.)
+- `lib/` – Utility functions and animation variants
 
-## Learn More
+## 📦 Dependencies
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Swiper.js](https://swiperjs.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deployment (Free)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The easiest way to deploy this website is with [Vercel](https://vercel.com/):
 
-## Deploy on Vercel
+1. Push your project to a GitHub repository.
+2. Go to [vercel.com](https://vercel.com/) and sign in with GitHub.
+3. Click **New Project** and import your repo.
+4. Vercel auto-detects Next.js and deploys your site for free.
+5. You’ll get a live URL instantly.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Alternatively, you can use [Netlify](https://netlify.com/) or [Render](https://render.com/) for free static hosting.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📖 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [Framer Motion Docs](https://www.framer.com/motion/)
+- [Swiper.js Docs](https://swiperjs.com/react)
+
+---
+
+Feel free to contribute or open issues to improve this project!
