@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 import { FaBriefcase, FaClock, FaTrophy } from "react-icons/fa";
 import { ImUsers } from "react-icons/im";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
@@ -31,7 +31,7 @@ const stats = [
 ];
 
 // animations
-const statsContainerVariant = {
+const statsContainerVariant: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -43,7 +43,7 @@ const statsContainerVariant = {
   },
 };
 
-const statsItem = {
+const statsItem: Variants = {
   hidden: { y: 20, opacity: 0 },
   show: {
     y: 0,

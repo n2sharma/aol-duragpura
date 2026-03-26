@@ -11,10 +11,10 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 // variants
-const footerContainerVariant = {
+const footerContainerVariant: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -26,7 +26,7 @@ const footerContainerVariant = {
   },
 };
 
-const footerItem = {
+const footerItem: Variants = {
   hidden: { y: 20, opacity: 0 },
   show: {
     opacity: 1,

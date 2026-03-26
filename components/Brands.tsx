@@ -3,10 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 // variants
-const brandContainerVariant = {
+const brandContainerVariant: Variants = {
   hidden: {
     opacity: 0,
   },
@@ -20,7 +20,7 @@ const brandContainerVariant = {
   },
 };
 
-const brandItem = {
+const brandItem: Variants = {
   hidden: {
     y: 20,
     opacity: 0,
